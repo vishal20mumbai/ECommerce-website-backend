@@ -83,4 +83,24 @@ public class CartDAOImpl implements CartDAO
 		return cartItem;
 	}
 
+
+		public boolean deleteCartItembyusername(String username)
+		{
+			try {
+			
+			Session session=sessionFactory.openSession();
+			
+			
+			Query query = session.createNativeQuery("delete from CartItem where username= :username " );
+			query.setParameter("username",username);
+			int x=query.executeUpdate();
+			
+			
+			}
+		    catch(Exception e)
+			{
+			System.out.println("Exception arised :"+e);    
+			}
+			return false;
+		    }
 }

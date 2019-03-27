@@ -10,6 +10,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.niit.dao.CartDAO;
 import com.niit.dao.CategoryDAO;
 import com.niit.model.CartItem;
+import com.niit.model.Category;
 
 public class CartDAOTest 
 {
@@ -52,4 +53,15 @@ public class CartDAOTest
 			System.out.println(cartItem.getProductName()+":::"+":::"+cartItem.getQuantity()+":::"+cartItem.getPstatus());
 		}
 	}
+	
+	//@Ignore
+	@Test
+	public void deleteCartItembyusernameTest() 
+	{
+	
+		
+		assertTrue("Problem in deleting cartitem:", cartDAO.deleteCartItembyusername("raj"));
+	
+	}
+
 }
